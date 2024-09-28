@@ -1,3 +1,3 @@
-library isar_key_value;
+library;
 
 export 'src/isar_key_value.dart';
