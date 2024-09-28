@@ -9,3 +9,5 @@ pubspec.lock
 /default.isar-lck
 /.flutter-plugins
 /.flutter-plugins-dependencies
+.idea/
+build/
