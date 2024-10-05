@@ -86,4 +86,13 @@ class IsarKeyValue {
     final isar = await _isar.future;
     return isar.writeTxn(() => isar.clear());
   }
+
+  /// Gets all key value pairs
+  ///
+  /// Throws a type error if one of the values is not of type [T]
+  Future<Map<String, T>> getAll<T>() async {
+    final isar = await _isar.future;
+    final items = await isar.txn(() => isar.keyValues.where().findAll());
+    return {for (var item in items) item.key: item.value as T};
+  }
 }
