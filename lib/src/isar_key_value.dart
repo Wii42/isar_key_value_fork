@@ -95,4 +95,8 @@ class IsarKeyValue {
     final items = await isar.txn(() => isar.keyValues.where().findAll());
     return {for (var item in items) item.key: item.value as T};
   }
+
+  Future<void> ensureInitialized() {
+    return _isar.future;
+  }
 }
